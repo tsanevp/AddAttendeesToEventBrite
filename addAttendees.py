@@ -29,48 +29,52 @@ except Exception as exception:
     print(msg)
     sys.exit(msg)
 
-# Opens Eventbrite 
+# Opens Eventbrite "Add Attendees" page, prompts user login first
 browser.get("https://www.eventbrite.com/attendees-add?eid=" + str(eventID))
 username = browser.find_element(By.ID, "email").send_keys(login)
 password = browser.find_element(By.ID, "password").send_keys(pwd)
 time.sleep(2)
-loginButton = browser.find_element(By.XPATH, '//*[@id="root"]/div/div[2]/div/div/div/div[1]/div/main/div/div[1]/div/div[2]/div/form/div[4]/div/button').click()
 
+# Clicks "Login" button
+loginButton = browser.find_element(By.XPATH, '//*[@id="root"]/div/div[2]/div/div/div/div[1]/div/main/div/div[1]/div/div[2]/div/form/div[4]/div/button')
+loginButton.click()
 time.sleep(10)
 
-# Iterate through and add each first/last name & email in the attendee list
+# Iterates through and registers each attendee in the attendee list
 with open(attendeeList) as inFile:
     lines = inFile.readlines()
     for line in lines:
+        # Splits the current customers information and stores it in an array
         tokens = line.split(",")
         firstname = tokens[0]
         surname = tokens[1]
         email = tokens[-1]
         print("Adding " + firstname + " " + surname + " (" + email + ")")
 
-        # Add each person to the event attendee list
+        # Add each person to the event from the attendee list
         try:
             # Open "Add Attendees" page for current event
             browser.get("https://www.eventbrite.com/attendees-add?eid=" + str(eventID))
             time.sleep(10)
-            # Populate ticket purchase amount for current customer
+
+            # Populates ticket purchase amount for current customer
             ticket_quantity = browser.find_element(By.ID, ticketID)
             ticket_quantity.send_keys("1")
             time.sleep(2)
-            # Click "Continue" button
-            continuebtn = browser.find_element(By.XPATH, '//*[@id="continue-attendee"]')
-            continuebtn.click()
+
+            # Clicks "Continue" button
+            continuebtn = browser.find_element(By.XPATH, '//*[@id="continue-attendee"]').click()
             time.sleep(10)
             browser.switch_to.frame(0)
-            # Populate current attendee's first/last name & email
+
+            # Populates current attendee's first/last name & email
             buyer_first_name = browser.find_element(By.XPATH, '//*[@id="buyer.N-first_name"]').send_keys(firstname)
             buyer_last_name = browser.find_element(By.XPATH, '//*[@id="buyer.N-last_name"]').send_keys(surname)
-            buyer_email = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div[1]/div/main/div/div[1]/div[1]/div/form/div[1]/div/div/div[4]/div/div[1]/div/div/input').send_keys(email)
-            buyer_first_name.send_keys(firstname)
-            buyer_last_name.send_keys(surname)
+            buyer_email = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div[1]/div/main/div/div[1]/div[1]/div/form/div[1]/div/div/div[4]/div/div[1]/div/div/input')
             buyer_email.send_keys(email)
             time.sleep(5)
-            # Click "Submit" button
+
+            # Clicks "Submit" button
             submitbtn = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div[1]/div/main/div/div[2]/div/nav/div[1]/button')
             submitbtn.click()
             time.sleep(10)
