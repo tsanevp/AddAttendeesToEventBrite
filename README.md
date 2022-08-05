@@ -24,7 +24,7 @@ This script automates the process, so you can easily import multiple attendees t
 ### Update The Script Where Needed
 
 * Enter your EventBrite login and password on lines 13 & 14.
-* Add your attendees to a comma-limited textfile in the format `firstname,surname,email_address`.
+* Add your attendees to a comma-limited text file in the format `firstname,surname,email_address` (see example text file).
 * Update the `attendeeList` variable on line 17 to point to the text file.
 * Update the `eventID` and `ticketID` variables on lines 20 & 21 with the values you determined in (1) and (2) above.
 
