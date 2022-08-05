@@ -1,6 +1,7 @@
-# Automating Adding Attendees To Your Event In Eventbrite
+# Automate Adding Attendees To Your Event In Eventbrite
 
-DISCLAIMER: This script is 
+DISCLAIMER: This script is based on the script written by Stephan Lead (https://github.com/IgniteTalks/AddAttendeesToEventBrite). The original script is obsolete, thus the one found here is up-to-date.
+
 EventBrite is a great package for managing your Ignite. It allows you to sell tickets (either paid or free) and check people in using their free iPhone/Android app.
 
 One major pain is that there's no easy Import function to add attendees. If you have a long list of attendees to add, it's time-consuming and error-prone.
