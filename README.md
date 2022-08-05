@@ -1,4 +1,4 @@
-#Add attendees to your EventBrite list
+# Add attendees to your EventBrite list
 
 EventBrite is a great package for managing your Ignite. It allows you to sell tickets (either paid or free) and check people in using their free iPhone/Android app.
 
@@ -6,7 +6,7 @@ One major pain is that there's no easy Import function to add attendees. If you 
 
 This script automates the process, so you can easily import multiple attendees to your guest list.
 
-####Before you get started
+#### Before you get started
 
 1) Log into your EventBrite account and open up the event that you wish to add people to. Note its `eid` value, which will be shown in the URL, eg https://www.eventbrite.com.au/myevent?eid=123456
 
@@ -16,7 +16,7 @@ This script automates the process, so you can easily import multiple attendees t
 
 3) Install the Selenium python plugin from https://selenium-python.readthedocs.org/
 
-####Update the script
+#### Update the script
 
 Enter your EventBrite login and password in the relevant sections.
 
@@ -24,6 +24,6 @@ Add your attendees to a tab-limited textfile in the format `firstname <tab> surn
 
 Update the `eventID` and `ticketID` sections with the values you determined in (1) and (2) above.
 
-####Run the Python script
+#### Run the Python script
 
 This should open a Firefox browser, log into your event, and add the names from the textfile to the ticket type that you've chosen.
