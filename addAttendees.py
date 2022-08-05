@@ -31,13 +31,11 @@ except Exception as exception:
 
 # Opens Eventbrite 
 browser.get("https://www.eventbrite.com/attendees-add?eid=" + str(eventID))
-username = browser.find_element(By.ID, "email")
-password = browser.find_element(By.ID, "password")
-username.send_keys(login)
-password.send_keys(pwd)
+username = browser.find_element(By.ID, "email").send_keys(login)
+password = browser.find_element(By.ID, "password").send_keys(pwd)
 time.sleep(2)
-loginButton = browser.find_element(By.XPATH, '//*[@id="root"]/div/div[2]/div/div/div/div[1]/div/main/div/div[1]/div/div[2]/div/form/div[4]/div/button')
-loginButton.click()
+loginButton = browser.find_element(By.XPATH, '//*[@id="root"]/div/div[2]/div/div/div/div[1]/div/main/div/div[1]/div/div[2]/div/form/div[4]/div/button').click()
+
 time.sleep(10)
 
 # Iterate through and add each first/last name & email in the attendee list
@@ -68,9 +66,9 @@ with open(attendeeList) as inFile:
             buyer_first_name = browser.find_element(By.XPATH, '//*[@id="buyer.N-first_name"]').send_keys(firstname)
             buyer_last_name = browser.find_element(By.XPATH, '//*[@id="buyer.N-last_name"]').send_keys(surname)
             buyer_email = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div[1]/div/main/div/div[1]/div[1]/div/form/div[1]/div/div/div[4]/div/div[1]/div/div/input').send_keys(email)
-            # buyer_first_name.send_keys(firstname)
-            # buyer_last_name.send_keys(surname)
-            # buyer_email.send_keys(email)
+            buyer_first_name.send_keys(firstname)
+            buyer_last_name.send_keys(surname)
+            buyer_email.send_keys(email)
             time.sleep(5)
             # Click "Submit" button
             submitbtn = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div[1]/div/main/div/div[2]/div/nav/div[1]/button')
