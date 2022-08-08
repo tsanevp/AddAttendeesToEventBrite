@@ -3,7 +3,7 @@
 DISCLAIMER: My work is based on the script written by Stephan Lead, which is found here: (https://github.com/IgniteTalks/AddAttendeesToEventBrite). The functionality within the original script is obsolete, thus the one found here is up-to-date.
 
 ## Background
-Eventbrite is a great package for managing events. It allows you to set-up an event's basic info, details, registration page, and much more. Additionally, you are able to sell tickets (either paid or free) to check people in during the even using their mobile device.
+Eventbrite is a great package for managing events. It allows you to set-up an event's basic info, details, registration page, and much more. Additionally, you are able to sell tickets (either paid or free) to check people in during the event using their mobile device.
 
 One major pain is that there is no easy import function to add multiple attendees at once. Thus, if you have a long list of attendees to add, it's time-consuming and error-prone.
 
