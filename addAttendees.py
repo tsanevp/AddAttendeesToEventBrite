@@ -5,7 +5,7 @@ try:
     from selenium.webdriver.common.by import By
 except Exception as exception:
     print(exception)
-    msg = "Please instatall Selenium"
+    msg = "Please install Selenium"
     print(msg)
     sys.exit(msg)
 
