@@ -7,7 +7,7 @@ Eventbrite is a great package for managing events. It allows you to set-up an ev
 
 One major pain is that there is no easy import function to add multiple attendees at once. Thus, if you have a long list of attendees to add, it's time-consuming and error-prone.
 
-This script automates the process, so you can easily import multiple attendees to your guest list.
+This script automates the process, so you can easily import multiple attendees to your guest list. Note that after roughly 45 attendees are added to your event, the website will time out and the process must be restarted, starting with the guest following the last to be added. 
 
 ### Before You Get Started
 
